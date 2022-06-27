@@ -6,99 +6,72 @@ namespace MathOperations
     {
         static void Main(string[] args)
         {
-            /// Задача 2
-            Console.WriteLine("Задача 2");
+            // Задача 10
 
-            var random = new Random();
-            int NumberOne = random.Next(100);
-            int NumberTwo = random.Next(100);
-
-            Console.WriteLine(NumberOne);
-            Console.WriteLine(NumberTwo);
-
-
-            if (NumberOne > NumberTwo)
-            {
-                Console.WriteLine("Первое число больше второго");
-            }
-            else if (NumberOne < NumberTwo)
-            {
-                Console.WriteLine("Второе число больше первого");
-            }
-            else
-            {
-                Console.WriteLine("Числа равны");
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-            /// Задача 4
-            Console.WriteLine("Задача 4");
-            int NumberThree = random.Next(100);
-
-            Console.WriteLine(NumberOne);
-            Console.WriteLine(NumberTwo);
-            Console.WriteLine(NumberThree);
-
-            if (NumberOne > NumberTwo && NumberOne > NumberThree)
-            {
-                Console.WriteLine("Первое число наибольшее");
-            }
-            else if (NumberTwo > NumberOne && NumberTwo > NumberThree)
-            {
-                Console.WriteLine("Второе число наибольшее");
-            }
-            else if (NumberThree > NumberOne && NumberThree > NumberTwo)
-            {
-                Console.WriteLine("Третье число наибольшее");
-            }
-            else
-            {
-                Console.WriteLine("Существуют два максимума у данной группы из 3 чисел");
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-            /// Задача 6
-            Console.WriteLine("Задача 6");
-
-            if (NumberOne % 2 == 0)
-            {
-                Console.WriteLine("Число четное");
-            }
-            else
-            {
-                Console.WriteLine("NumberOne - Число нечетное");
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-
-            /// Задача 8. Допустим, что число N - это последний элемент массива.
             
-            Console.WriteLine("Задача 8");
+            
+            Console.WriteLine("Задача 10");
 
-            int[] array = new int[30];
-            Random rand = new Random();
+            Console.WriteLine("Введите трехзначное число.");
 
-            for (int y = 0; y < 30; y++)
+            string input = Console.ReadLine();
+
+            int[] arr = input.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray();
+
+            Console.WriteLine(string.Join("-", arr));
+
+            Console.WriteLine(arr[1]);
+
+            Console.WriteLine();
+
+            // Задача 13
+            Console.WriteLine("Задача 13");
+
+            Console.WriteLine("Введите число.");
+
+            string input2 = Console.ReadLine();
+
+            int[] arr2 = input2.ToCharArray().Select(i => int.Parse(i.ToString())).ToArray();
+
+            if (arr2.Length < 3)
             {
-                array[y] = rand.Next(1, 30);
+                Console.WriteLine("Третьей цифры нет");
+
+            }
+            else
+            {
+                Console.WriteLine(arr2[2]);
             }
 
+            Console.WriteLine();
 
-            for (int i = 0; i <= array.Length - 1; i++)
+            // Задача 15
+            Console.WriteLine("Задача 15");
+
+            string[] Days = new string[8] {"Такого дня недели нет", "Нет", "Нет", "Нет", "Нет", "Нет", "Да", "Да"};
+
+            Console.WriteLine("Введите день недели числом. Например, понедельник - 1, суббота - 6");
+
+            string input3 = Console.ReadLine();
+
+            int DayNumber = Convert.ToInt32(input3);
+
+            Console.WriteLine("День недели - выходной?");
+
+            if (DayNumber == 0)
             {
-                if (i % 2 == 0)
-                {
-                    Console.Write(i + " ");
-                }
+                Console.WriteLine(Days[0]);
             }
-
+            else
+            {
+                Console.WriteLine(Days[DayNumber]);
+            }
+     
         }
+
+            
+
+    
     }
 }
 
